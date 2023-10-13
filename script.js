@@ -1,4 +1,4 @@
-var weight, height, measure, bmi, error ;
+let weight=0, height=0, measure, bmi, error ;
 
 function calculate() {
 	weight = document.getElementById("weight").value;
@@ -8,6 +8,7 @@ function calculate() {
 	height *= height;
 	bmi = weight/height;
 	bmi = bmi.toFixed(1);
+
 
 	if (bmi <= 18.4) {
 		measure = "Your BMI is " + bmi + " which means " + "you are Underweight";
@@ -32,3 +33,8 @@ function calculate() {
 		document.getElementById("results").innerHTML = "Negative Values not Allowed";
 	}
 }
+    document.addEventListener("keypress" , function (e) {
+    if (e.key === "Enter"){
+        calculate();
+    }
+;})

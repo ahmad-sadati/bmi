@@ -10,11 +10,11 @@ function calculate() {
 	bmi = bmi.toFixed(1);
 
 
-	if (bmi <= 18.4) {
+	if (bmi < 18.5) {
 		measure = "Your BMI is " + bmi + " which means " + "you are Underweight";
-	} else if (bmi >= 18.5 && bmi <= 24.9) {
+	} else if (bmi < 25) {
 		measure = "Your BMI is " + bmi + " which means " + "You are Normal";
-	} else if (bmi >= 25 && bmi <= 29.9) {
+	} else if (bmi < 30) {
 		measure = "Your BMI is " + bmi + " which means " + "You are Overweight";
 	} else if (bmi >= 30) {
 		measure = "Your BMI is " + bmi + " which means " + "You are Obese";
@@ -33,7 +33,12 @@ function calculate() {
 		document.getElementById("results").innerHTML = "Negative Values not Allowed";
 	}
 }
-    document.addEventListener("keypress" , function (e) {
+    heightinput.addEventListener("keypress" , function (e) {
+    if (e.key === "Enter"){
+        calculate();
+    }
+;})
+	weightinput.addEventListener("keypress" , function (e) {
     if (e.key === "Enter"){
         calculate();
     }
